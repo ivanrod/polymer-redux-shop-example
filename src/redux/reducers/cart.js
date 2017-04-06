@@ -1,6 +1,6 @@
-import * as Immutable from 'immutable';
+import { fromJS } from 'immutable';
 
-const INIT_STATE = Immutable.fromJS({
+const INIT_STATE = fromJS({
   tshirts: [],
   other: []
 });
@@ -13,14 +13,14 @@ const cart = (state = INIT_STATE, action) => {
     },
 
     ADD_TSHIRT(state, payload) {
-      const tshirt = Immutable.fromJS(payload);
+      const tshirt = fromJS(payload);
       const newState = state.update('tshirts', arr => arr.push(tshirt));
 
       return newState;
     },
 
     ADD_OTHER_ITEM(state, payload) {
-      const item = Immutable.fromJS(payload);
+      const item = fromJS(payload);
       const newState = state.update('other', arr => arr.push(item));
 
       return newState;
