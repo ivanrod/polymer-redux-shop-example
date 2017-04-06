@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint ./src/redux/**/*.js",
-    "serve": "gulp redux:build && gulp redux:watch & polymer serve "
+    "serve": "gulp redux:build && gulp redux:watch & polymer serve | npm run watch",
+    "watch": "browser-sync start --proxy localhost:8080 --files 'src/elements/*.*' 'index.html' '.tmp/*.js'"
   },
   "dependencies": {
     "gulp-rename": "^1.2.2",
@@ -15,6 +16,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.8",
     "eslint": "^3.19.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",

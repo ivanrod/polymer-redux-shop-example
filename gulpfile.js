@@ -40,5 +40,5 @@ gulp.task('redux:build', () =>
 );
 
 gulp.task('redux:watch', function () {
-    gulp.watch(['src/redux/**/*'], ['redux:build', () => console.log('Updated redux temp files')]);
+    gulp.watch(['src/redux/**/*', 'src/redux/*.js'], ['redux:build', () => console.log('Updated redux temp files')]);
 });
