@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint ./src/redux/**/*.js",
-    "tp": "gulp"
+    "serve": "gulp redux:build && gulp redux:watch & polymer serve "
   },
   "dependencies": {
     "gulp-rename": "^1.2.2",
@@ -20,7 +20,6 @@
     "gulp-babel": "^6.1.2",
     "gulp-better-rollup": "^1.1.1",
     "gulp-envify": "^1.0.0",
-    "gulp-watch": "^4.3.11",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0"

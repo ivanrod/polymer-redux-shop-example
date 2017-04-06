@@ -7,7 +7,7 @@ const rename = require("gulp-rename");
 const envify = require('gulp-envify');
 
 
-gulp.task('default', () =>
+gulp.task('redux:build', () =>
     gulp.src('src/redux/index.js')
         .pipe(rollup({
           plugins: [
@@ -29,11 +29,16 @@ gulp.task('default', () =>
               }
             })
           ],
-          moduleName: 'reduxConfig'
+          moduleName: 'ReduxConfig'
         }, 'umd'))
+        .on('error', error => console.log('Error on build task: ', error))
         .pipe(rename('reduxConfig.js'))
         .pipe(envify({
           NODE_ENV: 'production'
         }))
         .pipe(gulp.dest('.tmp'))
 );
+
+gulp.task('redux:watch', function () {
+    gulp.watch(['src/redux/**/*'], ['redux:build', () => console.log('Updated redux temp files')]);
+});
