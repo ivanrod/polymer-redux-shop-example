@@ -5,23 +5,27 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
+    "start": "npm install && bower install",
     "lint": "eslint ./src/redux/**/*.js",
+    "redux:build": "gulp redux:build",
     "serve": "gulp redux:build && gulp redux:watch & polymer serve | npm run watch",
     "watch": "browser-sync start --proxy localhost:8080 --files 'src/elements/*.*' 'index.html' '.tmp/*.js'"
   },
   "dependencies": {
-    "gulp-rename": "^1.2.2",
     "immutable": "^3.8.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.0",
     "browser-sync": "^2.18.8",
     "eslint": "^3.19.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-better-rollup": "^1.1.1",
     "gulp-envify": "^1.0.0",
+    "gulp-rename": "^1.2.2",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0"

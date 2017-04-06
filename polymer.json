@@ -9,7 +9,7 @@
     "src/elements/lazy-resources.html"
   ],
   "sourceGlobs": [
-   "src/**/*",
+   "src/elements/**/*",
    "data/**/*",
    "images/**/*",
    "bower.json"

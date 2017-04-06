@@ -11,7 +11,10 @@ gulp.task('redux:build', () =>
     gulp.src('src/redux/index.js')
         .pipe(rollup({
           plugins: [
-            babel(),
+            babel({
+              plugins: ['external-helpers'],
+              externalHelpers: true
+            }),
             nodeResolve({
               jsnext: true,
               main: true
