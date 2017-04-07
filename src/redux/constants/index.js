@@ -1,2 +1,5 @@
+import * as ActionTypes from './ActionTypes';
 
-export default {};
+export default {
+  ActionTypes
+};

@@ -11,10 +11,7 @@ gulp.task('redux:build', () =>
     gulp.src('src/redux/index.js')
         .pipe(rollup({
           plugins: [
-            babel({
-              plugins: ['external-helpers'],
-              externalHelpers: true
-            }),
+            babel(),
             nodeResolve({
               jsnext: true,
               main: true
@@ -25,9 +22,6 @@ gulp.task('redux:build', () =>
               ignoreGlobal: false,
               sourceMap: true,
               namedExports: {
-                // left-hand side can be an absolute path, a path
-                // relative to the current directory, or the name
-                // of a module in node_modules
                 'node_modules/immutable/dist/immutable.js': [ 'fromJS' ]
               }
             })
