@@ -228,6 +228,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       },
 
+      behaviors: [ReduxConfig.behavior, ReduxConfig.actions.cart],
+
       observers: [
         '_itemChanged(item, visible)'
       ],
@@ -263,6 +265,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _addToCart: function() {
+        this.actions.addToCart(this.item, this.$.sizeSelect.value);
+
         // This event will be handled by shop-app.
         this.fire('add-cart-item', {
           item: this.item,

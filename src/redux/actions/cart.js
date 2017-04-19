@@ -1,11 +1,15 @@
+import * as types from '../constants/ActionTypes';
+import { behaviorCreator } from '../utils/actions.utils';
 
-const addToCartUnsafe = productId => ({
+const addToCartUnsafe = product => ({
   type: types.ADD_TO_CART,
-  productId
+  payload: product
 });
 
-export const addToCart = productId => (dispatch, getState) => {
-  if (getState().products.byId[productId].inventory > 0) {
-    dispatch(addToCartUnsafe(productId));
-  }
+export const addToCart = (product, productSize) => (dispatch, getState) => {  
+  dispatch(addToCartUnsafe({product, productSize}));
 };
+
+export default behaviorCreator({
+  addToCart
+});

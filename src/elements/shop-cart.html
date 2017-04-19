@@ -13,6 +13,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shop-common-styles.html">
 <link rel="import" href="shop-form-styles.html">
 
+<link rel="import" href="../redux/redux-behavior.html">
+
 <dom-module id="shop-cart">
 
   <template>
@@ -87,7 +89,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         _hasItems: {
           type: Boolean,
           computed: '_computeHasItem(cart.length)'
-        }
+        },
+
+        behaviors: [ReduxConfig.behavior, ReduxConfig.actions.cart]
 
       },
 

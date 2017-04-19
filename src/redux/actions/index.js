@@ -1,3 +1,5 @@
+import cart from './cart';
 
-
-export default {};
+export default {
+  cart
+};
