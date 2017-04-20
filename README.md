@@ -25,7 +25,7 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 
 ### Build
 
-    polymer build
+    npm run build
 
 ### Test the build
 

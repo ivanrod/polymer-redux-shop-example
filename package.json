@@ -9,6 +9,7 @@
     "lint": "eslint ./src/redux/**/*.js",
     "redux:build": "gulp redux:build",
     "serve": "gulp redux:build && gulp redux:watch & polymer serve | npm run watch",
+    "build": "npm run redux:build && polymer build",
     "watch": "browser-sync start --proxy localhost:8080 --files 'src/elements/*.*' 'index.html' '.tmp/*.js'"
   },
   "dependencies": {
