@@ -6,8 +6,8 @@ const addToCartUnsafe = product => ({
   payload: product
 });
 
-export const addToCart = (product, productSize) => (dispatch, getState) => {  
-  dispatch(addToCartUnsafe({product, productSize}));
+export const addToCart = (productId, productSize) => (dispatch, getState) => {
+  dispatch(addToCartUnsafe({productId, productSize}));
 };
 
 export default behaviorCreator({

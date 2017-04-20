@@ -32,7 +32,8 @@ const cartHandlers = {
   },
 
   [ADD_TO_CART](state, payload) {
-    const { productId, productSize } = fromJS(payload);
+    const { productId, productSize } = payload;
+
     const newState = state
                       .update('addedIds', addId(productId))
                       .updateIn(['quantityById', productId], quantity => quantity ? quantity++ : 1)
